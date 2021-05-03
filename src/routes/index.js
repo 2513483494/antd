@@ -30,7 +30,7 @@ export const adminRoutes = [{
     isShow: true,
     title: '商品管理'
 }, {
-    path: '/admin/products/edit/:id',
+    path: '/admin/products/edit/:id?',
     component: Edit,
     isShow: false,
     icon: SettingFilled

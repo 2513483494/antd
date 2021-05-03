@@ -3,22 +3,22 @@ import { Card, Table, Button, Popconfirm } from 'antd'
 
 const dataSource = [{
     id:1,
-    name: 'b',
+    name: '茄子',
     price: 5
 }, {
     id:2,
-    name: 'a',
+    name: '白菜',
     price: 6
 },{
     id:3,
-    name: 'c',
+    name: '豆角',
     price: 7
 },{
     id:4,
-    name: 'd',
+    name: '土豆',
     price: 8
 },]
-function List() {
+function List(props) {
     const columes = [{
         title: '序号',
         key: 'id',
@@ -50,8 +50,15 @@ function List() {
         }
     }]
     return (
-    <Card title='商品列表' extra={<Button type='primary' size='small'>新增</Button>}>
+    <Card 
+    title='商品列表' 
+    extra={
+    <Button 
+    type='primary' 
+    size='small'
+    onClick={()=>props.history.push('/admin/products/edit')}>新增</Button>}>
         <Table 
+        rowKey='id'
         columns={columes} 
         bordered
         dataSource={dataSource}></Table>
